@@ -18,7 +18,7 @@ Add your GitHub username once and all of your info will automatically be updated
 
 ![Hero Dark](/README_images/heroDark.png)
 
-### Getting Started
+### Getting Start
 
 1. [Create a repository from this template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
 2. [Clone your new repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
