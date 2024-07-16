@@ -122,7 +122,7 @@ export const projectCardImages = [
   {
     name: "React-Counter-App",
     image: counter,
-    demo: "https://krunalvasava13.github.io/React-Counter-App/"
+    
   },
   {
     name: "FullStack-Todo-Application-Java-React",
