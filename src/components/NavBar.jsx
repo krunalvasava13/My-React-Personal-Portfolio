@@ -7,7 +7,9 @@ import PropTypes from "prop-types";
 // Router
 import { Link, useLocation } from "react-router-dom";
 // Images
-import defaultLogo from "../images/defaultNavLogo.svg";
+//import defaultLogo from "../images/defaultNavLogo.svg";
+import defaultLogo from "../images/klogo.png";
+import darklogo from "../images/dlogo.png";
 // Components
 import { Link as ScrollLink } from "react-scroll";
 import { Container, Nav, Navbar } from "react-bootstrap";
@@ -23,8 +25,9 @@ const navLinks = {
     { id: "1T", name: "Home", to: "Home" },
     { id: "2T", name: "About Me", to: "About" },
     { id: "3T", name: "Skills", to: "Skills" },
-    { id: "4T", name: "Projects", to: "Projects" },
-    { id: "5T", name: "Contact", to: "Contact" },
+    { id: "4T", name: "Certifications", to: "Certifications" },
+    { id: "5T", name: "Projects", to: "Projects" },
+    { id: "6T", name: "Contact", to: "Contact" },
   ],
 };
 // #endregion
@@ -44,6 +47,22 @@ const StyledDiv = styled.div`
       theme.name === "light" ? "var(--bs-dark)" : "var(--bs-light)"};
   }
 `;
+
+const StyledNavLink = styled(Nav.Link)`
+  font-weight: bold;
+  color: #e43d12;
+  &:hover {
+    color: darkred !important;
+  }
+`;
+
+const StyledScrollLink = styled(ScrollLink)`
+  font-weight: bold;
+  color: #e43d12;
+  &:hover {
+    color: darkred !important;
+  }
+`;
 // #endregion
 
 // #region component
@@ -53,7 +72,7 @@ const propTypes = {
   closeDelay: PropTypes.number,
 };
 
-const NavBar = ({ Logo = defaultLogo, callBack, closeDelay = 125 }) => {
+const NavBar = ({ Logo =  defaultLogo , callBack, closeDelay = 125 }) => {
   const theme = useSelector(selectMode);
   const [isExpanded, setisExpanded] = React.useState(false);
   const { pathname } = useLocation();
@@ -66,18 +85,20 @@ const NavBar = ({ Logo = defaultLogo, callBack, closeDelay = 125 }) => {
         collapseOnSelect={true}
         expand="xl"
         expanded={isExpanded}
-        bg={theme === "light" ? "light" : "dark"}
         variant={theme === "light" ? "light" : "dark"}
         fixed="top"
+        bg={theme === "light" ? "light" : "dark"}
+        //style={{ backgroundColor: theme === "light" ? "rgba(235, 233, 225, 1)" : "#000000" }}
       >
         <Container>
           <Navbar.Brand>
             <img
               alt="Logo"
-              src={Logo === null ? defaultLogo : Logo}
-              width="35"
+              //src={Logo === null ? defaultLogo : Logo}
+              src = {theme === "light" ? defaultLogo : darklogo}
+              width="40"
               height="35"
-              className="rounded-circle logo-img"
+              className=" logo-img"
             />
           </Navbar.Brand>
           <Navbar.Toggle
@@ -90,7 +111,7 @@ const NavBar = ({ Logo = defaultLogo, callBack, closeDelay = 125 }) => {
                 ? navLinks.to.map((el) => {
                     return (
                       <Nav.Item key={el.id}>
-                        <ScrollLink
+                        <StyledScrollLink
                           to={el.to}
                           spy={true}
                           activeClass="active"
@@ -102,14 +123,15 @@ const NavBar = ({ Logo = defaultLogo, callBack, closeDelay = 125 }) => {
                           }}
                         >
                           {el.name}
-                        </ScrollLink>
+                        </StyledScrollLink>
                       </Nav.Item>
                     );
                   })
                 : navLinks.routes.map((el) => {
                     return (
                       <Nav.Item key={el.id}>
-                        <Link
+                        <StyledNavLink
+                          as={Link}
                           to={el.route}
                           className={
                             pathname === el.route
@@ -123,7 +145,7 @@ const NavBar = ({ Logo = defaultLogo, callBack, closeDelay = 125 }) => {
                           }}
                         >
                           {el.name}
-                        </Link>
+                        </StyledNavLink>
                       </Nav.Item>
                     );
                   })}

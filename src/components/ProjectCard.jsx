@@ -17,7 +17,7 @@ const StyledCard = styled.div`
     border: var(--border);
     transition: all 0.2s ease-in-out;
     background: ${({ theme }) =>
-      theme.name === "light" ? "" : "var(--bs-gray)"};
+      theme.name === "light" ? "" : "var(--bs-gray-dark)"};
     box-shadow: ${({ theme }) =>
       theme.name === "light"
         ? "0 3px 10px rgb(0 0 0 / 0.2)"

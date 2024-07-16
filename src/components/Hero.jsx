@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 // Icons
 import { Icon } from "@iconify/react";
 // Images
-import Logo from "../images/logo.svg";
+import HomeImg from "../images/img.jpg";
 import { Light, Dark } from "../config";
 // Components
 import { useErrorBoundary } from "react-error-boundary";
@@ -21,6 +21,28 @@ const spin = keyframes`
   }
   to {
     transform: rotate(360deg);
+  }
+`;
+
+const fadeInUp = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const slideInLeft = keyframes`
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 `;
 
@@ -65,9 +87,21 @@ const StyledHero = styled.header`
     height: 10rem;
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    .hero-img {
-      animation: ${spin} infinite 20s linear;
+  @media screen and (max-width: 1179px) {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: ${({ theme }) =>
+        theme.name === "light"
+          ? "rgba(235, 233, 225, 0.2)"
+          : "rgba(0, 0, 0, 0.2)"};
+      background-size: auto;
+      background-position: center;
+      z-index: -1;
     }
   }
 
@@ -75,20 +109,108 @@ const StyledHero = styled.header`
     &::before {
       background: ${({ theme }) =>
         theme.name === "light"
-          ? `url(${Light}) top center fixed no-repeat`
-          : `url(${Dark}) top center fixed no-repeat`};
+          ? "rgba(235, 233, 225, 0.2)"
+          : "rgba(0, 0, 0, 0.2)"};
       background-size: 100vw auto;
     }
   }
 
-  @media screen and (min-width: 1367px) {
+  @media screen and (min-width: 0px) {
     &::before {
       background: ${({ theme }) =>
         theme.name === "light"
-          ? `url(${Light}) center center fixed no-repeat`
-          : `url(${Dark}) center center fixed no-repeat`};
+          ? "rgba(235, 233, 225, 0.2)"
+          : "rgba(0, 0, 0, 0.2)"};
       background-size: cover;
     }
+  }
+
+  .title {
+  animation: ${slideInLeft} 1s ease-out;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #e43d12;
+  //text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow for depth */
+  letter-spacing: 1.5px; /* Adjusts letter spacing */
+  background: linear-gradient(90deg, #ff8a00, #e52e71); /* Adds gradient text */
+  -webkit-background-clip: text; /* Ensures gradient is applied to text only */
+  -webkit-text-fill-color: transparent; /* Ensures text color is transparent to show gradient */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Adds a smooth transition effect */
+
+  &:hover {
+    color: #d9534f; /* Changes color on hover */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); /* Intensifies shadow on hover */
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+
+  .role {
+    animation: ${slideInLeft} 1.5s ease-out;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #555;
+  }
+
+  .link-icons {
+    animation: ${slideInLeft} 2s ease-out;
+    font-size: 2rem;
+    margin-top: 20px;
+    color: #e43d12;
+
+    &:hover {
+      color: #d9534f;
+    }
+  }
+`;
+
+const StyledImage = styled.img`
+  width: 70%;
+  height: auto;
+  border: 5px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(to left, #f0ad4e, #d9534f); /* Gradient border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s; /* Smooth transition */
+  transform: rotate(0deg); /* Initial tilt */
+
+  &:hover {
+    transform: scale(1.1) rotate(-2deg); /* Slightly enlarge and tilt on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+  }
+
+  @media (max-width: 768px) {
+    width: 75%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(240, 173, 78, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 10px 20px rgba(240, 173, 78, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(240, 173, 78, 0);
+    }
+  }
+
+  &:hover {
+    animation: pulse 1.5s infinite;
+  }
+`;
+
+const StyledCol = styled(Col)`
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 // #endregion
@@ -105,21 +227,22 @@ const Hero = ({ name }) => {
     <StyledHero>
       <Container>
         <Row className="align-items-center text-center">
-          <Col>
+          <Col xs={12} md={6}>
             <h1 className="mb-3 display-3 title">
               {name === null ? "null" : name}
             </h1>
+            <h3 className="role">Full Stack Developer</h3>
             <div className="d-flex align-items-center justify-content-center">
               <SocialLinks />
             </div>
           </Col>
-          <Col className="d-none d-md-block">
-            <img
-              src={Logo}
+          <StyledCol xs={12} md={6} className="mt-5">
+            <StyledImage
+              src={HomeImg}
               alt="React Logo"
-              className="w-75 mx-auto hero-img"
+              className="mx-auto hero-img"
             />
-          </Col>
+          </StyledCol>
         </Row>
         <Row className="align-items-end down-container">
           <Col className="m-4 text-center">

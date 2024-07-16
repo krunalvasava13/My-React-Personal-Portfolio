@@ -12,6 +12,8 @@ import BackToTop from "../components/BackToTop";
 import { filteredProjects, moreInfo } from "../config";
 // Utils
 import { updateTitle } from "../utils";
+import AboutImg from "../images/img2.jpg"
+import Certifications from "../components/Certifications";
 
 // #region component
 const Home = () => {
@@ -26,11 +28,12 @@ const Home = () => {
       <Hero name={userData.name} />
       <main>
         <AboutMe
-          avatar_url={userData.avatar_url}
+          avatar_url={AboutImg}
           bio={userData.bio}
           moreInfo={moreInfo}
         />
         <Skills />
+        <Certifications />
         <Projects filteredProjects={filteredProjects} />
         <Contact />
       </main>

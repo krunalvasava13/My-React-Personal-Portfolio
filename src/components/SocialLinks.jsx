@@ -32,12 +32,35 @@ const SocialLinks = () => {
   return (
     <StyledSocialLinks>
       <a
+        href={"https://www.linkedin.com/in/krunal-vasava-074a56179/"}
+        aria-label="Check out my LinkedIn profile."
+        className="link-icons"
+      >
+        <Icon icon="fa-brands:linkedin" />
+      </a>
+      <a
         href={userData.html_url}
         aria-label="Check out my GitHub profile."
         className="link-icons"
       >
         <Icon icon="icomoon-free:github" />
       </a>
+      <a
+        href={"https://www.facebook.com/krunal.vasava.520?mibextid=ZbWKwL"}
+        aria-label="Check out my Facebook profile."
+        className="link-icons"
+      >
+        <Icon icon="fa-brands:facebook-square" />
+      </a>
+      <a
+        href={"https://www.instagram.com/krunalvasava?igsh=MTdiNGplMXMwcmRwZw=="}
+        aria-label="Check out my Instagram profile."
+        className="link-icons"
+      >
+        <Icon icon="fa-brands:instagram-square" />
+      </a>
+      
+      
       {isSuccess &&
         socialsData.map((element, index) => {
           let icon;

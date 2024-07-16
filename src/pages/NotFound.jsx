@@ -4,7 +4,7 @@ import styled, { keyframes } from "styled-components";
 // Components
 import { Container } from "react-bootstrap";
 // Images
-import Logo from "../images/logo.svg";
+import Logo from "../images/klogo.png";
 // Utils
 import { updateTitle } from "../utils";
 
