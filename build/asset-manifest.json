@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/My-React-Personal-Portfolio/static/css/main.9de42ed2.css",
+    "main.js": "/My-React-Personal-Portfolio/static/js/main.c472761e.js",
+    "static/media/img.jpg": "/My-React-Personal-Portfolio/static/media/img.60d317eabcff44de5afd.jpg",
+    "static/media/img2.jpg": "/My-React-Personal-Portfolio/static/media/img2.09709c65218a3ab8f56f.jpg",
+    "static/media/sql certi.jpg": "/My-React-Personal-Portfolio/static/media/sql certi.3bf6e801d79d36dba351.jpg",
+    "static/media/spring_certi.jpg": "/My-React-Personal-Portfolio/static/media/spring_certi.fd64b751fd44d29167db.jpg",
+    "static/media/java certi.png": "/My-React-Personal-Portfolio/static/media/java certi.f4c30a1074290a04b27a.png",
+    "static/media/dlogo.png": "/My-React-Personal-Portfolio/static/media/dlogo.1ddd733ed6f135319d44.png",
+    "static/media/klogo.png": "/My-React-Personal-Portfolio/static/media/klogo.b38bdcd1614f82ef81de.png",
+    "static/media/todo.png": "/My-React-Personal-Portfolio/static/media/todo.396359fab2a11091d7c0.png",
+    "service-worker.js": "/My-React-Personal-Portfolio/service-worker.js",
+    "static/media/portfolio.png": "/My-React-Personal-Portfolio/static/media/portfolio.3ff6a6d891fa599b51be.png",
+    "static/media/counter.png": "/My-React-Personal-Portfolio/static/media/counter.94a3d9d19f3f47c36090.png",
+    "static/media/GH.svg": "/My-React-Personal-Portfolio/static/media/GH.b9e9a9aa6f05e9dfe5dcb8991bda3e4d.svg",
+    "index.html": "/My-React-Personal-Portfolio/index.html",
+    "main.9de42ed2.css.map": "/My-React-Personal-Portfolio/static/css/main.9de42ed2.css.map",
+    "main.c472761e.js.map": "/My-React-Personal-Portfolio/static/js/main.c472761e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9de42ed2.css",
+    "static/js/main.c472761e.js"
+  ]
+}
