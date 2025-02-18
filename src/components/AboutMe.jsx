@@ -5,7 +5,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 // Components
 import { Element } from "react-scroll";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row, Accordion } from "react-bootstrap";
 import Title from "./Title";
 import { resume } from "../config";
 
@@ -106,6 +106,51 @@ const StyledAboutMe = styled.section`
     font-size: 1rem;
     color: #333;
   }
+
+  .accordion-button {
+    background-color: #f8f9fa;
+    
+    &:not(.collapsed) {
+      background-color: #f8f9fa;
+      color: #d9534f;
+    }
+
+    &:hover {
+      background-color: #f8f9fa;
+    }
+  }
+
+  .accordion-button::after {
+    color: #d9534f;
+  }
+
+  .accordion-button:focus {
+    border-color: #d9534f;
+    box-shadow: 0 0 0 0.25rem rgba(217, 83, 79, 0.25);
+    background-color: #f8f9fa;
+  }
+
+  .accordion-item {
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .accordion-header {
+    background-color: #f8f9fa;
+  }
+
+  .experience-details {
+    padding: 1rem;
+  }
+
+  .role-description {
+    margin-top: 1rem;
+  }
+
+  .role-description ul {
+    margin-top: 0.5rem;
+  }
 `;
 // #endregion
 
@@ -151,11 +196,53 @@ const AboutMe = ({ avatar_url, bio, moreInfo }) => {
               </div>
               <div className="experience">
                 <div className="section-title">Experience</div>
-                <div className="details">
-                  <div className="details-header">Software Engineer 1</div>
-                  <div className="details-body">Qualifacts (August 2023 - April 2024)</div>
-                  <div className="details-body">Vadodara, Gujarat.</div>
-                </div>
+                <Accordion>
+                  <Accordion.Item eventKey="0">
+                    <Accordion.Header>
+                      <div >
+                        <div className="details-header">Full Stack Developer</div>
+                        <div className="details-body">UCI India (August 2024 - Present)</div>
+                      </div>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                      <div className="experience-details">
+                        <div>Vadodara, Gujarat</div>
+                        <div className="role-description">
+                          Key Responsibilities:
+                          <ul>
+                            <li>Developing applications with .NET Core, React, JavaScript, HTML, CSS, and MS SQL Server.</li>
+                            <li>Implementing REST APIs, cloud integration via Azure, and CI/CD with Azure DevOps.</li>
+                            <li>Conducting code reviews, ensuring best practices, and mentoring team members.</li>
+                            <li>Handling documentation, RFP analysis, technical demos, and Agile ceremonies</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </Accordion.Body>
+                  </Accordion.Item>
+
+                  <Accordion.Item eventKey="1">
+                    <Accordion.Header>
+                      <div>
+                        <strong className="details-header">Software Engineer 1</strong>
+                        <div className="details-body">Qualifacts (August 2023 - April 2024)</div>
+                      </div>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                      <div className="experience-details">
+                        <div>Vadodara, Gujarat</div>
+                        <div className="role-description">
+                          Key Responsibilities:
+                          <ul>
+                            <li>Developed key features using .NET, MVC, C#, JavaScript, jQuery, and SQL Server.</li>
+                            <li>Managed sprints, user stories, and tech debts in Azure DevOps.</li>
+                            <li>Optimized code quality using SonarQube and SonarLint.</li>
+                            <li>Collaborated with cross-functional teams and engaged in client meetings.</li>  
+                          </ul>
+                        </div>
+                      </div>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                </Accordion>
               </div>
             </Col>
           </Row>

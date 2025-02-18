@@ -46,64 +46,89 @@ export const Blog = null;
 export const skillData = [
   {
     id: 1,
-    skill: <Icon icon="mdi:language-java" style={{ color: "red" }} className="display-4" />,
-    name: "Java",
+    skill: <Icon icon="simple-icons:dotnet" style={{ color: "red" }} className="display-4" />,
+    name: ".NET Core",
   },
   {
     id: 2,
-    skill: <Icon icon="mdi:language-cpp" style={{ color: "red" }} className="display-4" />,
-    name: "C/C++",
+    skill: <Icon icon="mdi:language-csharp" style={{ color: "red" }} className="display-4" />,
+    name: "C#",
   },
   {
     id: 3,
-    skill: <Icon icon="fa6-brands:js" style={{ color: "red" }} className="display-4" />,
-    name: "JavaScript",
+    skill: <Icon icon="simple-icons:microsoftsqlserver" style={{ color: "red" }} className="display-4" />,
+    name: "SQL Server",
   },
   {
     id: 4,
-    skill: <Icon icon="simple-icons:springboot" style={{ color: "red" }} className="display-4" />,
-    name: "Spring Boot",
+    skill: <Icon icon="simple-icons:microsoftazure" style={{ color: "red" }} className="display-4" />,
+    name: "Azure",
   },
   {
     id: 5,
+    skill: <Icon icon="simple-icons:microsoftazure" style={{ color: "red" }} className="display-4" />,
+    name: "Azure DevOps",
+  },
+  {
+    id: 6,
+    skill: <Icon icon="mdi:api" style={{ color: "red" }} className="display-4" />,
+    name: "REST APIs",
+  },
+  {
+    id: 7,
     skill: <Icon icon="mdi:react" style={{ color: "red" }} className="display-4" />,
     name: "React",
   },
   {
-    id: 6,
-    skill: <Icon icon="fa-solid:database" style={{ color: "red" }} className="display-4" />,
-    name: "SQL",
+    id: 8,
+    skill: <Icon icon="fa6-brands:js" style={{ color: "red" }} className="display-4" />,
+    name: "JavaScript",
   },
   {
-    id: 7,
+    id: 9,
     skill: <Icon icon="mdi:language-html5" style={{ color: "red" }} className="display-4" />,
     name: "HTML5",
   },
   {
-    id: 8,
+    id: 10,
     skill: <Icon icon="ion:logo-css3" style={{ color: "red" }} className="display-4" />,
     name: "CSS3",
   },
   {
-    id: 9,
+    id: 11,
+    skill: <Icon icon="mdi:language-java" style={{ color: "red" }} className="display-4" />,
+    name: "Java",
+  },
+  {
+    id: 12,
+    skill: <Icon icon="simple-icons:springboot" style={{ color: "red" }} className="display-4" />,
+    name: "Spring Boot",
+  },
+  {
+    id: 13,
+    skill: <Icon icon="mdi:language-cpp" style={{ color: "red" }} className="display-4" />,
+    name: "C/C++",
+  },
+  {
+    id: 14,
+    skill: <Icon icon="fa-solid:database" style={{ color: "red" }} className="display-4" />,
+    name: "SQL",
+  },
+  {
+    id: 15,
     skill: <Icon icon="cib:amazon-aws" style={{ color: "red" }} className="display-4" />,
     name: "AWS",
   },
   {
-    id: 10,
-    skill: <Icon icon="simple-icons:microsoftazure" style={{ color: "red" }} className="display-4" />,
-    name: "Azure Devops",
-  },
-  {
-    id: 11,
+    id: 16,
     skill: <Icon icon="bi:git" style={{ color: "red" }} className="display-4" />,
     name: "Git",
   },
   {
-    id: 12,
+    id: 17,
     skill: <Icon icon="fa6-brands:square-github" style={{ color: "red" }} className="display-4" />,
     name: "GitHub",
-  },
+  }
 ];
 
 
@@ -115,7 +140,7 @@ export const resume = "https://drive.google.com/drive/folders/1JKr63RJck9j7tqgly
  ************************************************************** 
   List the repo names (string - "your-repo-name") you want to include (they will be sorted alphabetically). If empty, only the first 3 will be included.
 */
-export const filteredProjects = ["React-Counter-App", "FullStack-Todo-Application-Java-React", "My-React-Personal-Portfolio"];
+export const filteredProjects = ["React-Counter-App", "Full-Stack-TimeSheet-Management-System", "My-React-Personal-Portfolio"];
 
 // Replace the defualt GitHub image for matching repos below (images imported above - lines 7-8)
 export const projectCardImages = [
@@ -125,7 +150,7 @@ export const projectCardImages = [
     
   },
   {
-    name: "FullStack-Todo-Application-Java-React",
+    name: "Full-Stack-TimeSheet-Management-System",
     image: todo,
   },
   {
